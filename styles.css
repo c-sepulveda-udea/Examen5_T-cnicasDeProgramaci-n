@@ -1,0 +1,123 @@
+/* styles.css */
+* { box-sizing: border-box; font-family: Arial, sans-serif; }
+
+body {
+  background: linear-gradient(180deg,#0b2545,#06213a);
+  color: #fff;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.container {
+  width: 920px;
+  max-width: 95%;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.board {
+  background: linear-gradient(180deg,#f7f7f7, #e9eef7);
+  color: #000;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+.reels {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.reel {
+  width: 180px;
+}
+
+.reel-box {
+  background: #fff;
+  border-radius: 8px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #e2e6ef;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  padding: 8px;
+}
+
+.reel-box img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+/* controles */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.spin-btn {
+  background: linear-gradient(180deg,#ff6b00,#ff4500);
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(255,69,0,0.25);
+  font-size: 16px;
+}
+
+.spin-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* resultado */
+.result {
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 8px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.result-win { background: #d4ffd8; color: #045d17; }
+.result-almost { background: #fff6d4; color: #7a5a00; }
+.result-lose { background: #ffd6d6; color: #7a0000; }
+
+/* tabla estadísticas */
+.stats {
+  width: 100%;
+  margin-top: 16px;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+}
+
+.stats th, .stats td {
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer {
+  margin-top: 12px;
+  font-size: 12px;
+  opacity: 0.9;
+}

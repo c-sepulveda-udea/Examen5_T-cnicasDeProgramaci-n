@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es" ng-app="slotApp">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tragamonedas - Examen 5</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- AngularJS CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body ng-controller="SlotCtrl as vm">
+  <main class="container">
+    <h1>Máquina Tragamonedas</h1>
+
+    <div class="board">
+      <ul class="reels">
+        <li class="reel" ng-repeat="r in vm.reels track by $index">
+          <div class="reel-box">
+            <img ng-src="img/{{ r }}" alt="símbolo {{$index+1}}" />
+          </div>
+        </li>
+      </ul>
+
+      <div class="controls">
+        <button class="spin-btn" ng-click="vm.spin()" ng-disabled="vm.spinning">
+          {{ vm.spinning ? 'Girando...' : 'GIRAR' }}
+        </button>
+        <div class="result" ng-class="vm.resultClass">
+          {{ vm.resultText }}
+        </div>
+      </div>
+    </div>
+
+    <table class="stats">
+      <thead>
+        <tr>
+          <th>Ganadas (3 iguales)</th>
+          <th>Casi (2 iguales)</th>
+          <th>Pérdidas (todas diferentes)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ vm.stats.win }}</td>
+          <td>{{ vm.stats.almost }}</td>
+          <td>{{ vm.stats.lose }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer class="footer">
+      <p>Hecho con AngularJS · Examen 5 - Programación Web</p>
+    </footer>
+  </main>
+</body>
+</html>
